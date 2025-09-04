@@ -20,7 +20,6 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-
 const events = Object.entries(sampleData).map(([date, users]) => {
   const dateObj = new Date(date);
   return {
@@ -51,7 +50,7 @@ function CalendarBarDashboard() {
         startAccessor="start"
         endAccessor="end"
         onSelectEvent={handleSelectEvent}
-        style={{ height: 500 }}
+        style={{ height: 650 }}
       />
       <DataModal />
     </div>
