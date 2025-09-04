@@ -1,15 +1,14 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import CalendarBarDashboard from "./components/Calender";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <CalendarBarDashboard />
+      <Provider store={store}>
+        <CalendarBarDashboard />
+      </Provider>
     </>
   );
 }
