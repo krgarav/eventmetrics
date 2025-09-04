@@ -5,6 +5,7 @@ EventMetrics is a React-based web application that combines **React Big Calendar
 ---
 
 ## ✅ Features
+
 - View events in **Month / Week / Day** views.
 - Click on a date → Opens a **modal** with a **bar chart**.
 - If no data for the selected date → Displays **"No data found"**.
@@ -32,11 +33,10 @@ eventmetrics/
 ├── vite.config.js
 └── README.md
 
-
-
 ---
 
 ## 🛠 Tech Stack
+
 - **React** (UI)
 - **Redux Toolkit** (State Management)
 - **React Big Calendar** (Calendar UI)
@@ -59,4 +59,8 @@ npm install
 
 ### 3️⃣ Run in Development Mode
 
+npm run dev
+
 ```bash
+
+```
