@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import format from "date-fns/format";
 import parse from "date-fns/parse";
@@ -9,7 +9,6 @@ import { sampleData } from "../data/sample";
 import { useDispatch } from "react-redux";
 import { openModal } from "../redux/calendarSlice";
 import DataModal from "./DataModal";
-import "react-big-calendar/lib/css/react-big-calendar.css";
 
 const locales = { "en-US": enUS };
 const localizer = dateFnsLocalizer({
@@ -35,6 +34,8 @@ const events = Object.entries(sampleData).map(([date, users]) => {
 function CalendarBarDashboard() {
   const dispatch = useDispatch();
 
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [view, setView] = useState("month");
   const handleSelectEvent = (event) => {
     const serializableEvent = {
       ...event,
@@ -51,8 +52,13 @@ function CalendarBarDashboard() {
         events={events}
         startAccessor="start"
         endAccessor="end"
-        onSelectEvent={handleSelectEvent}
         style={{ height: 650 }}
+        date={currentDate}
+        view={view}
+        onNavigate={(newDate) => setCurrentDate(newDate)}
+        onView={(newView) => setView(newView)}
+        views={["month", "week", "day", "agenda"]}
+        onSelectEvent={handleSelectEvent}
       />
       <DataModal />
     </div>

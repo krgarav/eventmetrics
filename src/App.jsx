@@ -15,6 +15,7 @@ function App() {
           <CalendarBarDashboard />
         </div>
       </div>
+      
     </>
   );
 }
