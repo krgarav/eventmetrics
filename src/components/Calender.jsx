@@ -22,8 +22,10 @@ const localizer = dateFnsLocalizer({
 
 const events = Object.entries(sampleData).map(([date, users]) => {
   const dateObj = new Date(date);
+  const hasData = users.length > 0;
+
   return {
-    title: `Users Data`,
+    title: hasData ? `${users.length} Users Data` : "No Data",
     start: dateObj,
     end: dateObj,
     users,
